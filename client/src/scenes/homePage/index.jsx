@@ -7,6 +7,27 @@ import PostsWidget from "scenes/widgets/PostsWidget";
 import AdvertWidget from "scenes/widgets/AdvertWidget";
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 
+import {
+  IconButton,
+  InputBase,
+  Typography,
+  Select,
+  MenuItem,
+  FormControl,
+  useTheme
+} from "@mui/material";
+import {
+  Search,
+  DarkMode,
+  LightMode,
+  Menu,
+  Close,
+  Home,
+  NotificationsActiveOutlined,
+  Message,
+  Face
+} from "@mui/icons-material";
+
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
@@ -22,7 +43,37 @@ const HomePage = () => {
         justifyContent="space-between"
       >
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
-          <UserWidget userId={_id} picturePath={picturePath} />
+          {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
+          <Box>
+          <IconButton>
+              <Home /> 
+              <Typography padding="12px" fontSize="24px">Home</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <Search /> 
+              <Typography padding="12px" fontSize="24px">Explore</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <NotificationsActiveOutlined /> 
+              <Typography padding="12px" fontSize="24px">Notifications</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <Message /> 
+              <Typography padding="12px" fontSize="24px">Message</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <Face /> 
+              <Typography padding="12px" fontSize="24px">Profile</Typography>
+            </IconButton>
+          </Box>
         </Box>
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}

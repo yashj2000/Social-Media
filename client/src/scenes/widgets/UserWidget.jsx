@@ -81,10 +81,10 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length} friends</Typography>
+            <Typography color={medium}>{friends.length} following</Typography>
           </Box>
         </FlexBetween>
-        <ManageAccountsOutlined />
+        {/* <ManageAccountsOutlined /> */}
       </FlexBetween>
 
       <Divider />
@@ -124,7 +124,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </FlexBetween>
       </Box> */}
       <Box>
-          <IconButton>
+          <IconButton onClick={() => navigate(`/home`)}>
               <Home /> 
               <Typography padding="12px" fontSize="24px">Home</Typography>
             </IconButton>

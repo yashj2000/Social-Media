@@ -3,8 +3,17 @@ import {
   EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
+  Search,
+  DarkMode,
+  LightMode,
+  Menu,
+  Close,
+  Home,
+  NotificationsActiveOutlined,
+  Message,
+  Face
 } from "@mui/icons-material";
-import { Box, Typography, Divider, useTheme } from "@mui/material";
+import { Box, Typography, Divider, useTheme, IconButton } from "@mui/material";
 import UserImage from "components/UserImage";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -80,40 +89,10 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
-      {/* SECOND ROW */}
-      <Box p="1rem 0">
-        <Box display="flex" alignItems="center" gap="1rem" mb="0.5rem">
-          <LocationOnOutlined fontSize="large" sx={{ color: main }} />
-          <Typography color={medium}>{location}</Typography>
-        </Box>
-        <Box display="flex" alignItems="center" gap="1rem">
-          <WorkOutlineOutlined fontSize="large" sx={{ color: main }} />
-          <Typography color={medium}>{occupation}</Typography>
-        </Box>
-      </Box>
 
-      <Divider />
-
-      {/* THIRD ROW */}
-      <Box p="1rem 0">
-        <FlexBetween mb="0.5rem">
-          <Typography color={medium}>Who's viewed your profile</Typography>
-          <Typography color={main} fontWeight="500">
-            {viewedProfile}
-          </Typography>
-        </FlexBetween>
-        <FlexBetween>
-          <Typography color={medium}>Impressions of your post</Typography>
-          <Typography color={main} fontWeight="500">
-            {impressions}
-          </Typography>
-        </FlexBetween>
-      </Box>
-
-      <Divider />
 
       {/* FOURTH ROW */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
           Social Profiles
         </Typography>
@@ -143,7 +122,31 @@ const UserWidget = ({ userId, picturePath }) => {
           </FlexBetween>
           <EditOutlined sx={{ color: main }} />
         </FlexBetween>
-      </Box>
+      </Box> */}
+      <Box>
+          <IconButton>
+              <Home /> 
+              <Typography padding="12px" fontSize="24px">Home</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <Search /> 
+              <Typography padding="12px" fontSize="24px">Explore</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <NotificationsActiveOutlined /> 
+              <Typography padding="12px" fontSize="24px">Notifications</Typography>
+            </IconButton>
+          </Box>
+          <Box>
+          <IconButton>
+              <Message /> 
+              <Typography padding="12px" fontSize="24px">Message</Typography>
+            </IconButton>
+          </Box>
     </WidgetWrapper>
   );
 };
